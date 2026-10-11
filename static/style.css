@@ -1,0 +1,204 @@
+/* Minecraft / Retro Game Theme */
+:root {
+    --mc-dirt: #866043;
+    --mc-grass: #599238;
+    --mc-stone: #7d7d7d;
+    --mc-stone-light: #9a9a9a;
+    --mc-stone-dark: #5a5a5a;
+    --text-color: #ffffff;
+    --text-shadow: 2px 2px 0px #3f3f3f;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-color);
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    /* Custom Minecraft Background */
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    image-rendering: auto; /* Changed to auto so the high-res image isn't distorted */
+}
+
+/* Subtle pixel overlay pattern */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.login-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* The main container looks like a stone block */
+.login-card {
+    background: var(--mc-stone);
+    border: 4px solid var(--mc-stone-dark);
+    border-top-color: var(--mc-stone-light);
+    border-left-color: var(--mc-stone-light);
+    box-shadow: inset -4px -4px 0px 0px rgba(0,0,0,0.2), 
+                8px 8px 0px 0px rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: 0; /* Remove rounded corners */
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-shadow: var(--text-shadow);
+    color: #ffd700; /* Gold text */
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.text-muted {
+    color: #e0e0e0 !important;
+    font-size: 0.6rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 0px #3f3f3f;
+}
+
+/* Form labels styling */
+.form-label {
+    font-size: 0.6rem;
+    color: #ffd700 !important;
+    text-shadow: 1px 1px 0px #3f3f3f;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* Form inputs styling */
+.form-control, .input-group-text {
+    background: #1e1e1e !important;
+    color: white !important;
+    border: 4px solid #555555;
+    border-top-color: #111111;
+    border-left-color: #111111;
+    border-radius: 0 !important;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 12px;
+    box-shadow: none !important;
+}
+
+.form-control::placeholder {
+    color: #888888;
+}
+
+.form-control:focus, .input-group:focus-within .input-group-text {
+    border-color: #555555;
+    border-top-color: #111111;
+    border-left-color: #111111;
+    background: #000000 !important;
+}
+
+.input-group-text {
+    background: #333333 !important;
+}
+
+/* Minecraft Button Styling */
+.btn-login {
+    background-color: var(--mc-stone);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    border: 4px solid var(--mc-stone-dark);
+    border-top-color: var(--mc-stone-light);
+    border-left-color: var(--mc-stone-light);
+    border-radius: 0;
+    padding: 15px;
+    text-shadow: var(--text-shadow);
+    transition: none; /* Instant feedback like a game */
+    box-shadow: inset -4px -4px 0px 0px rgba(0,0,0,0.2);
+}
+
+.btn-login:hover {
+    background-color: #8c8c8c;
+    color: #ffffa0; /* highlight yellow */
+}
+
+.btn-login:active {
+    background-color: var(--mc-stone);
+    border-color: var(--mc-stone-light);
+    border-top-color: var(--mc-stone-dark);
+    border-left-color: var(--mc-stone-dark);
+    box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.2);
+    transform: translateY(2px);
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    background: #1e1e1e;
+    border: 3px solid #555555;
+    border-top-color: #111111;
+    border-left-color: #111111;
+    border-radius: 0 !important;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 12px;
+    box-shadow: none !important;
+}
+
+.custom-checkbox:checked {
+    background-color: var(--mc-grass);
+    border-color: #3f6827;
+    border-top-color: #1e3312;
+    border-left-color: #1e3312;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.form-check-label {
+    font-size: 0.55rem;
+    margin-top: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/* Links */
+.hover-link {
+    color: #55ffff !important; /* Aqua */
+    text-shadow: 1px 1px 0px #3f3f3f;
+}
+
+.hover-link:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Validation animations */
+.invalid-feedback {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    color: #ff5555;
+    text-shadow: 1px 1px 0px #3f3f3f;
+    margin-top: 10px;
+}
